@@ -978,6 +978,8 @@
         ];
 
         // Resume Builder Functions
+        //all data is store
+        //bla blah
         function startResumeBuilder() {
             isResumeMode = true;  
             resumeData = {
@@ -1004,6 +1006,7 @@
                     currentSection = step.key;
                 }
             } else {
+                //else it gonna show final resume fianl means final
                 showFinalResume();
             }
         }
@@ -1046,6 +1049,8 @@
                     // Process the section item
                     resumeData[currentSection].push(userText);
                     addMessage(
+                        //the currect step is for crrent like what we are adding 
+                        //and liike for exapmle we are adding edu than it its selct just to understand
                         `✅ Added to ${currentSection}. Type 'add' for another or 'done' to finish`,
                         "bot"
                     );
@@ -1053,13 +1058,15 @@
                 }
             } else {
                 // Process regular field
+                //now its finalnlty endingh her process
                 resumeData[step.key] = userText;
                 currentStep++;
                 askNextResumeQuestion();
                 updateLivePreview();
             }
         }
-
+        //IMPORTANT=================================
+    //ugly live previwe remove it later
         function updateLivePreview() {
             const preview = document.getElementById("livePreview");
 
@@ -1082,7 +1089,7 @@
                 <ul>${resumeData.projects.map(p => `<li>${p}</li>`).join("") || "<li>None added yet</li>"}</ul>
             `;
         }
-
+//template time its templat for resdume upgrade it later cause it is really ugly //imporant REMOVE IT LATER UPGRADE IT
        function showFinalResume() {
             isResumeMode = false;  
             const resumeContainer = document.getElementById("resumeContainer");
@@ -1129,7 +1136,7 @@
                             : "<li>No skills listed</li>"}
                     </ul>
                 </div>
-                
+                //CHANGE PROJECTS TO CERTIFICATE
                 <div class="resume-section">
                     <h2>PROJECTS</h2>
                     <ul>
@@ -1152,7 +1159,7 @@
             document.getElementById("resumeCloseBtn").addEventListener("click", function() {
                 resumeContainer.style.display = "none";
             });
-            
+            //ADD OPT TO SVE LIKE 
             addMessage("I've created your professional resume! You can download it as PDF or close it using the X button.", "bot");
             
             // Scroll to the resume
